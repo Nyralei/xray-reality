@@ -15,7 +15,7 @@ serverIp=$(curl -s ipv4.wtfismyip.com/text)
 uuid=$XRAY_UUID
 shortId=$XRAY_SHORT_ID
 
-url="vless://$uuid@$serverIp:$port?type=http&security=reality&encryption=none&pbk=$pub&fp=chrome&path=$path&sni=$sni&sid=$shortId#$name"
+url="vless://$uuid@$serverIp:$port?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=$sni&alpn=h2&fp=chrome&security=reality&pbk=$pub&packetEncoding=xudp#vless%2Btls%2Bh2%2Brealit"
 
 newJson=$(echo "$json" | jq \
     --arg pk "$pk" \
