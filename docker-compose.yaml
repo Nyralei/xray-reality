@@ -1,7 +1,6 @@
 services:
   xray-reality:
     image: xray-reality
-    entrypoint: sleep infinity
     build: .
     ports:
       - 8000:8000

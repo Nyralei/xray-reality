@@ -22,5 +22,10 @@ WORKDIR /root/
 
 COPY ./config.json ./config.json
 COPY ./install.sh ./install.sh
+RUN chmod +x install.sh
+
+COPY ./entrypoint.sh ./entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 8000
